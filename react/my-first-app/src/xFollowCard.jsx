@@ -6,23 +6,24 @@ export function XFollowCard({ children, userName }) {
 
   // Estado local para manejar si se está siguiendo o no
   const [isFollowing, setIsFollowing] = useState(false);
+
   /*
    *  Otra forma de escribirlo
-   * const [name, setName] = useState('Brayan');
+   *  const [name, setName] = useState('Brayan'); // ! 'Brayan' es el valor inicial del estado
    *
    *  const handleClick = () => {
-   *    setName('Astrid');
+   *    setName('Astrid'); // ! Actualiza el estado a 'Astrid'
    *  }
    */
 
-  const text = isFollowing ? "Siguiendo" : "Seguir";
+  const text = isFollowing ? "Siguiendo" : "Seguir"; // ! Texto del botón basado en el estado
 
   const buttonClassName = isFollowing
     ? "x-followCard-button is-following"
     : "x-followCard-button";
 
   const handleClick = () => {
-    setIsFollowing(!isFollowing);
+    setIsFollowing(!isFollowing); // * Cambia el estado al valor opuesto
   };
 
   return (
