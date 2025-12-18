@@ -7,9 +7,24 @@ export function App() {
   // * Prop: información que se le pasa a un componente
   // * Elemento: lo que se renderiza en pantalla
   // * const formatedUserName = <span>@brayanarvelo</span>;
-  //  * Los children son los elementos que se encuentran entre las etiquetas de un componente
+  // * Los children son los elementos que se encuentran entre las etiquetas de un componente
 
-  
+  const users = [ 
+    {
+      userName: "brayanarvelo",
+      name: "Brayan Arvelo Balbbuena",
+      isFolowing: false,
+    },
+    { userName: "astridortegaa", 
+      name: "Astrid Ortega", 
+      isFolowing: true },
+    {
+      userName: "carlitos123",
+      name: "Carlitos Perez",
+      isFolowing: false,
+    }
+  ];
+
   return (
     <section className="App">
       <XFollowCard // * Esto es un componente que devuelve un elemento
@@ -23,8 +38,20 @@ export function App() {
         // formatUsername={format}
         userName="astridortegaa"
       >
-        Astrid Ortega
+        Astrid Ortega                                             
       </XFollowCard>
+      
+      {
+        users.map(({userName, name}) => (
+          <XFollowCard
+            key={userName} // * Siempre que se usa un map se debe agregar una key única
+            // formatUsername={format}
+            userName={userName}
+          >
+            {name}
+          </XFollowCard>
+        ))}
+
     </section>
   );
 }

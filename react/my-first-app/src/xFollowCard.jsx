@@ -41,7 +41,8 @@ export function XFollowCard({ children, userName }) {
 
       <aside>
         <button onClick={handleClick} className={buttonClassName}>
-          {text}
+          <span className="x-followCard-follow"> {text}</span>
+          <span className="x-followCard-stopFollow"> Dejar de seguir</span>
         </button>
       </aside>
     </article>
