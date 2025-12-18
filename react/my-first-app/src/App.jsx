@@ -9,49 +9,49 @@ export function App() {
   // * const formatedUserName = <span>@brayanarvelo</span>;
   // * Los children son los elementos que se encuentran entre las etiquetas de un componente
 
-  const users = [ 
-    {
-      userName: "brayanarvelo",
-      name: "Brayan Arvelo Balbbuena",
-      isFolowing: false,
-    },
-    { userName: "astridortegaa", 
-      name: "Astrid Ortega", 
-      isFolowing: true },
-    {
-      userName: "carlitos123",
-      name: "Carlitos Perez",
-      isFolowing: false,
-    }
-  ];
-
-  return (
-    <section className="App">
-      <XFollowCard // * Esto es un componente que devuelve un elemento
-        // formatUsername={format}  Pasamos la función como prop
-        userName="brayanarvelo"
+  /*
+  <XFollowCard // * Esto es un componente que devuelve un elemento
+        formatUsername={format}  // * Pasamos la función como prop
+        userName="brayan_25"
       >
         Brayan Arvelo Balbbuena
       </XFollowCard>
 
       <XFollowCard
-        // formatUsername={format}
+        formatUsername={format}
         userName="astridortegaa"
       >
         Astrid Ortega                                             
       </XFollowCard>
-      
-      {
-        users.map(({userName, name}) => (
-          <XFollowCard
-            key={userName} // * Siempre que se usa un map se debe agregar una key única
-            // formatUsername={format}
-            userName={userName}
-          >
-            {name}
-          </XFollowCard>
-        ))}
+  */
 
+  const users = [
+    {
+      userName: "brayan__25",
+      name: "Brayan Arvelo Balbbuena",
+      isFolowing: false,
+    },
+    { userName: "astridortega2", 
+      name: "Astrid Ortega",
+      isFolowing: true },
+    {
+      userName: "carlitos123",
+      name: "Carlitos Perez",
+      isFolowing: false,
+    },
+  ];
+
+  return (
+    <section className="App">
+      {users.map(({ userName, name }) => (
+        <XFollowCard
+          key={userName} // * Siempre que se usa un map se debe agregar una key única
+          // formatUsername={format}
+          userName={userName}
+        >
+          {name}
+        </XFollowCard>
+      ))}
     </section>
   );
 }

@@ -30,7 +30,7 @@ export function XFollowCard({ children, userName }) {
       <header className="x-followCard-header">
         <img
           className="x-followCard-avatar"
-          src="https://media-bcn1-1.cdn.whatsapp.net/v/t61.24694-24/586739587_1488308329124665_4476067750708660254_n.jpg?stp=dst-jpg_s96x96_tt6&ccb=11-4&oh=01_Q5Aa3QFDrZrKlO0uVIiXvZfdebZZ-nokYE6EkxLbW-P_6DcYRA&oe=69505EB5&_nc_sid=5e03e0&_nc_cat=107"
+          src={`https://unavatar.io/tiktok/${userName}`}
           alt="foto-perfil"
         />
         <div className="x-followCard-info">
