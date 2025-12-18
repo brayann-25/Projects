@@ -74,14 +74,10 @@
     display: none;
 }
 
-.x-followCard-follow {
-    display: block;
-}
-
 .x-followCard-button.is-following:hover .x-followCard-stopFollow {
     display: block;
 }
 
 .x-followCard-button.is-following:hover .x-followCard-follow {
     display: none;
-}
+} 
