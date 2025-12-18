@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import { XFollowCard } from "./xFollowCard";
 
-function App() {
-  const [count, setCount] = useState(0)
+export function App() {
+  // *const format = (userName) => `@${userName}`;
+  // * Componente: elemento que devuelve otro elemento
+  // * Prop: información que se le pasa a un componente
+  // * Elemento: lo que se renderiza en pantalla
+  // * const formatedUserName = <span>@brayanarvelo</span>;
+  //  * Los children son los elementos que se encuentran entre las etiquetas de un componente
 
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <section className="App">
+      <XFollowCard // * Esto es un componente que devuelve un elemento
+        // formatUsername={format}  Pasamos la función como prop
+        userName="brayanarvelo"
+      >
+        Brayan Arvelo Balbbuena
+      </XFollowCard>
 
-export default App
+      <XFollowCard
+        // formatUsername={format}
+        userName="astridortegaa"
+      >
+        Astrid Ortega
+      </XFollowCard>
+    </section>
+  );
+}

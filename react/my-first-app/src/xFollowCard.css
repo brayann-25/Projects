@@ -4,18 +4,8 @@
     font-size: 0.8rem;
     align-items: center;
     justify-content: space-between;
-    padding: 15px
+    width: 250px;
 }
-
-.x-followCard:hover {
-    background-color: #1f1d1d;
-    cursor: pointer;
-    border-radius: 8px;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    -ms-border-radius: 8px;
-    -o-border-radius: 8px;
-}   
 
 .x-followCard-header {
     display: flex;
@@ -50,10 +40,4 @@
     border: none;
     font-weight: bold;
     cursor: pointer;
-    margin-left: 10px;
-}
-
-.x-followCard-button.is-following:hover {
-    background-color: red;
-    color: white;
 }
