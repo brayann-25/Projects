@@ -28,7 +28,7 @@ export function App() {
   const users = [
     {
       userName: "brayan__25",
-      name: "Brayan Arvelo Balbbuena",
+      name: "Brayan Arvelo",
       isFolowing: false,
     },
     { userName: "astridortega2", 
