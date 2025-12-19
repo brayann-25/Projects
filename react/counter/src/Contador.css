@@ -1,0 +1,46 @@
+.c-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: #646cffaa 0px 0px 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    
+    max-width: 400px;
+}
+
+.c-header{
+    font-size: 2rem;
+}
+
+.c-buttons-container {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.c-button{
+    padding:5px;
+}
+
+.c-button.increment {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.c-button.decrement {
+    background-color: #f44336; /* Red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

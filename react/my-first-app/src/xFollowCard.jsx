@@ -46,6 +46,6 @@ export function XFollowCard({ children, userName }) {
           <span className="x-followCard-stopFollow"> Dejar de seguir</span>
         </button>
       </aside>
-    </article>
+    </article>  
   );
 }
