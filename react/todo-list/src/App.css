@@ -52,10 +52,6 @@
 .td-section-tabs button:hover {
   font-weight: bold;
   border-bottom: 1px solid blueviolet;
-  -webkit-transition: all;
-  -moz-transition: all;
-  -ms-transition: all;
-  -o-transition: all;
 }
 
 .td-section-tasks {
