@@ -5,38 +5,100 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.td-container {
+  background-color: rgb(68 72 81);
+  padding: 2rem 0 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  min-height: 700px;
+  min-width: 300px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.td-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  padding: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.td-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
 }
 
-.card {
-  padding: 2em;
+.td-today {
+  font-size: 1.5rem;
 }
 
-.read-the-docs {
-  color: #888;
+.td-section-tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.td-section-tabs button {
+  cursor: pointer;
+  padding: 0 0 0.5rem 0rem;
+  background-color: transparent;
+  border: none;
+  text-emphasis: none;
+}
+
+.td-section-tabs button:hover {
+  font-weight: bold;
+  border-bottom: 1px solid blueviolet;
+  -webkit-transition: all;
+  -moz-transition: all;
+  -ms-transition: all;
+  -o-transition: all;
+}
+
+.td-section-tasks {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-y: scroll;  /* Esto soluciona el desbordamiento vertical */
+  overflow-x: hidden;  /* Esto evita que aparezca scroll horizontal */
+  background-color: rgb(90 94 101);
+  padding: 1rem;
+  height: 300px;
+  width: 300px;
+}
+
+.td-task-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.td-menu-bar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(68 72 81);
+  padding: 0.5rem 1rem;
+  margin: unset;
+}
+
+
+.td-menu-bar button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.8rem;
+}
+
+.td-menu-bar svg {
+  width: 24px;
+  height: 24px;
 }
