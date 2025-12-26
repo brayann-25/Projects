@@ -4,7 +4,7 @@ import "./Todolist.css";
 export default function Todolist({ children }) {
 
   const [isCompleted, setIsCompleted] = useState(false);
-
+  
   const liClassName = isCompleted ? "td-task-item completed" : "td-task-item";
 
   const handleCheckboxChange = () => {
