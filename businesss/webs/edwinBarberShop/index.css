@@ -125,10 +125,10 @@ section {
     height: 70px;
     width: 100%;
     position: fixed;
-    /*Fijoarriba*/top: 0;
+    top: 0; /*Fijoarriba*/
     left: 0;
     z-index: 1000;
-    /*Porencimadetodo*/border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee; /*Por encima de todo*/
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
 }
