@@ -1,0 +1,12 @@
+# Dependencias (esta es la más importante)
+node_modules/
+
+# Archivos de configuración de NPM
+npm-debug.log*
+
+# Archivos del sistema (opcional)
+.DS_Store
+Thumbs.db
+
+# Si usas VS Code para tus configuraciones locales
+.vscode/
