@@ -201,8 +201,7 @@ section {
 }
 
 .menu-toggle {
-    display: none;
-    /* Oculto en escritorio */
+    display: none;    /* Oculto en escritorio */
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--color-black);
@@ -216,8 +215,7 @@ body {
 /* --- RESPONSIVE NAVBAR (Móvil) --- */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block;
-        /* Mostrar hamburguesa en móvil */
+        display: block;  /* Mostrar hamburguesa en móvil */
     }
 
     .nav-menu {
@@ -348,7 +346,81 @@ body {
     color: var(--color-gray);
 }
 
-/* --- 4. REVIEWS --- */
+/* --- 4. TEAM SECTION --- */
+#team {
+    background-color: var(--color-white);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.team-card {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-photo-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Mantiene la foto cuadrada */
+    overflow: hidden;
+    border-radius: 20px;
+    /* Redondeado elegante */
+    margin-bottom: 25px;
+    background-color: var(--color-light-gray);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.team-photo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen sin deformarla */
+    filter: grayscale(100%);
+    /* Filtro blanco y negro inicial para elegancia */
+    transition: filter 0.5s ease, transform 0.5s ease;
+}
+
+.team-card:hover .team-photo-wrapper img {
+    filter: grayscale(0%);
+    /* La foto cobra color al pasar el ratón */
+    transform: scale(1.05);
+    /* Zoom suave */
+}
+
+.team-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.team-card .specialty {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-gray);
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* --- 5. REVIEWS --- */
 #reviews {
     background-color: var(--color-black);
     color: var(--color-white);
@@ -397,7 +469,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* --- 5. INFO PRACTICA --- */
+/* --- 6. INFO PRACTICA --- */
 #info {
     background-color: var(--color-white);
 }
@@ -435,7 +507,7 @@ body {
     gap: 15px;
 }
 
-/* --- 6. BOOKING BANNER --- */
+/* --- 7. BOOKING BANNER --- */
 #booking-banner {
     background-color: var(--color-light-gray);
     padding: 60px 20px;
@@ -446,7 +518,7 @@ body {
     margin-bottom: 30px;
 }
 
-/* --- 7. FOOTER --- */
+/* --- 8. FOOTER --- */
 footer {
     background-color: var(--color-black);
     color: #666;
@@ -475,7 +547,15 @@ footer p {
     }
 
     .info-item {
-        justify-content: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    }
+
+    .info-item i {
+        margin-right: 0;
+        margin-top: 0;
     }
 
     .info-actions {
@@ -488,4 +568,20 @@ footer p {
         display: block;
         margin: 0 auto 10px;
     }
+}
+
+/* Estado inicial: oculto y movido 30px abajo */
+.reveal {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: all 0.8s ease-out !important;
+    visibility: hidden;
+    /* Evita que se pueda clicar mientras es invisible */
+}
+
+/* Estado activo: se muestra y vuelve a su posición original */
+.reveal.active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible;
 }

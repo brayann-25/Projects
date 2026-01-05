@@ -61,3 +61,40 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 })
+
+// Efecto de aparición al hacer scroll
+
+/* eslint-env browser */
+
+const initScrollReveal = () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.15 // Se activa cuando el 15% es visible
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active')
+        // Una vez que aparece, dejamos de observarlo para ahorrar recursos
+        observer.unobserve(entry.target)
+      }
+    })
+  }, observerOptions)
+
+  const elementsToReveal = document.querySelectorAll('.reveal')
+
+  if (elementsToReveal.length === 0) {
+    console.warn('No se encontraron elementos con la clase .reveal')
+  }
+
+  elementsToReveal.forEach((el) => observer.observe(el))
+}
+
+// Ejecutar cuando el DOM esté listo
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initScrollReveal)
+} else {
+  initScrollReveal()
+}
