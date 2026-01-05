@@ -38,6 +38,10 @@ a {
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 ul {
@@ -56,6 +60,10 @@ ul {
     border: 2px solid var(--color-black);
     cursor: pointer;
     transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .btn-primary {
@@ -126,13 +134,15 @@ section {
     width: 100%;
     position: fixed;
     top: 0;
-    /*Fijoarriba*/
-    left: 0;
+    /*Fijoarriba*/left: 0;
     z-index: 1000;
     border-bottom: 1px solid #eee;
-    /*Por encima de todo*/
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /*Porencimadetodo*/box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -178,6 +188,10 @@ section {
     left: 0;
     background-color: var(--color-black);
     transition: width 0.3s;
+    -webkit-transition: width 0.3s;
+    -moz-transition: width 0.3s;
+    -ms-transition: width 0.3s;
+    -o-transition: width 0.3s;
 }
 
 .nav-link:hover::after {
@@ -195,6 +209,10 @@ section {
     text-transform: uppercase;
     border: 2px solid var(--color-black);
     transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
 }
 
 .nav-btn:hover {
@@ -226,8 +244,7 @@ body {
         position: absolute;
         top: 70px;
         left: -100%;
-        /* Oculto a la izquierda */
-        width: 100%;
+        /*Ocultoalaizquierda*/width: 100%;
         height: calc(100vh - 70px);
         background-color: var(--color-white);
         flex-direction: column;
@@ -236,7 +253,11 @@ body {
         gap: 40px;
         transition: left 0.4s ease;
         border-top: 1px solid #eee;
-    }
+        -webkit-transition: left 0.4s ease;
+        -moz-transition: left 0.4s ease;
+        -ms-transition: left 0.4s ease;
+        -o-transition: left 0.4s ease;
+}
 
     .nav-menu.active {
         left: 0;
@@ -580,7 +601,11 @@ footer p {
     transform: translateY(30px) !important;
     transition: all 0.8s ease-out !important;
     visibility: hidden;
-    /* Evita que se pueda clicar mientras es invisible */
+        /* Evita que se pueda clicar mientras es invisible */:;
+    -webkit-transition: all 0.8s ease-out !important;
+    -moz-transition: all 0.8s ease-out !important;
+    -ms-transition: all 0.8s ease-out !important;
+    -o-transition: all 0.8s ease-out !important;
 }
 
 /* Estado activo: se muestra y vuelve a su posición original */
@@ -588,4 +613,8 @@ footer p {
     opacity: 1 !important;
     transform: translateY(0) !important;
     visibility: visible;
+    -webkit-transform: translateY(0) !important;
+    -moz-transform: translateY(0) !important;
+    -ms-transform: translateY(0) !important;
+    -o-transform: translateY(0) !important;
 }
