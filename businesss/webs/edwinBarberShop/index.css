@@ -134,10 +134,12 @@ section {
     width: 100%;
     position: fixed;
     top: 0;
-    /*Fijoarriba*/left: 0;
+    /*Fijoarriba*/
+    left: 0;
     z-index: 1000;
     border-bottom: 1px solid #eee;
-    /*Porencimadetodo*/box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    /*Porencimadetodo*/
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -244,7 +246,8 @@ body {
         position: absolute;
         top: 70px;
         left: -100%;
-        /*Ocultoalaizquierda*/width: 100%;
+        /*Ocultoalaizquierda*/
+        width: 100%;
         height: calc(100vh - 70px);
         background-color: var(--color-white);
         flex-direction: column;
@@ -257,7 +260,7 @@ body {
         -moz-transition: left 0.4s ease;
         -ms-transition: left 0.4s ease;
         -o-transition: left 0.4s ease;
-}
+    }
 
     .nav-menu.active {
         left: 0;
@@ -270,7 +273,7 @@ body {
 }
 
 /* --- 1. HERO SECTION --- */
-#hero { 
+#hero {
     height: 90vh;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1953&q=80');
     background-size: cover;
@@ -395,10 +398,7 @@ body {
 .team-photo-wrapper {
     width: 100%;
     aspect-ratio: 1 / 1;
-    /* Mantiene la foto cuadrada */
-    overflow: hidden;
-    border-radius: 20px;
-    /* Redondeado elegante */
+    /*Mantiene la foto cuadrada*/
     margin-bottom: 25px;
     background-color: var(--color-light-gray);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -601,7 +601,7 @@ footer p {
     transform: translateY(30px) !important;
     transition: all 0.8s ease-out !important;
     visibility: hidden;
-    /*Evitaquesepuedaclicarmientrasesinvisible*/:;
+    /*Evitaquesepuedaclicarmientrasesinvisible*/
     -webkit-transition: all 0.8s ease-out !important;
     -moz-transition: all 0.8s ease-out !important;
     -ms-transition: all 0.8s ease-out !important;
