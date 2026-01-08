@@ -505,7 +505,6 @@ body {
     justify-content: space-around;
     align-items: center;
     gap: 40px;
-    margin-top: 40px;
     text-align: left;
 }
 
@@ -719,4 +718,49 @@ footer p {
     -moz-transform: translateY(0) !important;
     -ms-transform: translateY(0) !important;
     -o-transform: translateY(0) !important;
+}
+
+/* --- BOTÓN SCROLL TO TOP --- */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top:hover {
+    background-color: var(--color-dark-gray);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.scroll-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
 }
