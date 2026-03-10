@@ -552,6 +552,11 @@ section {
     margin-bottom: 10px;
 }
 
+.reviews-cta {
+    margin-top: 40px;
+    text-align: center;
+}
+
 /* --- 7. PRICING: TARJETAS (Fondo: Blanco) --- */
 #pricing {
     background-color: var(--color-white);
