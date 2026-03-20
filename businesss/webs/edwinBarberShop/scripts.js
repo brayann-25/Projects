@@ -19,7 +19,7 @@ const throttle = (func, limit) => {
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   const navList = document.getElementById("nav-list");
-  const navLinks = document.querySelectorAll(".nav-link, .nav-btn");
+  const navLinks = document.querySelectorAll("a[href^='#']");
   const navbar = document.querySelector(".navbar");
   const scrollToTopBtn = document.getElementById("scroll-to-top");
 
@@ -144,3 +144,64 @@ if (document.readyState === "loading") {
 } else {
   initScrollReveal();
 }
+
+/* =========================================
+   LÓGICA DEL SELECTOR DE SEDES (SPLIT)
+   ========================================= */
+
+/**
+ * Función para seleccionar una barbería y filtrar el contenido
+ * @param {string} location - 'eixample' o 'noubarris'
+ */
+function selectBarber(location) {
+    const filteredContent = document.getElementById('filtered-content');
+    const locNameDisplay = document.getElementById('selected-loc-name');
+    const allLocData = document.querySelectorAll('.loc-data');
+    const specificData = document.querySelectorAll('.' + location + '-data');
+
+    // 1. Mostrar el contenedor principal que estaba oculto (display: none)
+    if (filteredContent) {
+        filteredContent.style.display = 'block';
+    }
+
+    // 2. Ocultar todos los bloques de datos de ambas sedes primero
+    allLocData.forEach(el => {
+        el.style.display = 'none';
+    });
+
+    // 3. Mostrar solo los bloques de la sede seleccionada
+    specificData.forEach(el => {
+        el.style.display = 'block';
+    });
+
+    // 4. Actualizar el nombre en la barra de selección superior
+    if (locNameDisplay) {
+        locNameDisplay.innerText = location === 'eixample' ? 'Eixample' : 'Nou Barris';
+    }
+
+    // 5. Scroll suave hacia el inicio del contenido filtrado
+    filteredContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // 6. Si usas efectos de "reveal", reiniciamos la comprobación de scroll
+    if (typeof handleReveal === 'function') {
+        handleReveal();
+    }
+}
+
+/**
+ * Función para volver al selector y cambiar de local
+ */
+function resetSelection() {
+    const selector = document.getElementById('location-selector');
+    if (selector) {
+        selector.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+// Asegurarnos de que al cargar la página el contenido esté oculto
+document.addEventListener('DOMContentLoaded', () => {
+    const filteredContent = document.getElementById('filtered-content');
+    if (filteredContent) {
+        filteredContent.style.display = 'none';
+    }
+});

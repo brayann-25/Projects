@@ -413,9 +413,9 @@ section {
     line-height: 1.6;
 }
 
-/* --- 5. GALLERY STYLE (Fondo: Gris Claro) --- */
+/* --- 5. GALLERY STYLE (Fondo: Blanco) --- */
 #gallery {
-    background-color: var(--color-light-gray);
+    background-color: var(--color-white);
 }
 
 .gallery-container {
@@ -650,7 +650,7 @@ section {
 
 /* --- 9. INFO PRACTICA (Fondo: Blanco) --- */
 #info {
-    background-color: var(--color-white);
+    background-color: var(--color-light-gray);
 }
 
 .info-container {
@@ -850,5 +850,157 @@ footer p {
         width: 45px;
         height: 45px;
         font-size: 18px;
+    }
+}
+
+/* =========================================
+   SELECTOR DE LOCALES (NUEVO APARTADO)
+   ========================================= */
+
+/* Contenedor Split Screen */
+.split-container {
+    display: flex;
+    height: 60vh;
+    min-height: 400px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.split-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+    padding: 40px;
+}
+
+/* Lado Eixample (Oscuro) */
+.eixample-side {
+    background-position: center;
+    background-repeat: no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/local.jpeg');
+    background-size: cover;
+    /* background-color: var(--color-black); */
+    color: var(--color-white);
+}
+
+/* Lado Nou Barris (Claro) */
+.noubarris-side {
+    background-repeat: no-repeat;
+    background-position: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/local-virrei.jpeg');
+    background-size: cover;
+    color: var(--color-white);
+}
+
+/* Efecto expansión al pasar el ratón */
+@media (min-width: 769px) {
+    .split-option:hover {
+        flex: 1.4;
+    }
+}
+
+.split-content h2 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: inherit;
+    /* Mantiene el color blanco o negro según el lado */
+}
+
+.tag {
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Ajustes de botones dentro del Split */
+.split-option .btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 0.8rem;
+}
+
+.btn-outline-white {
+    background: transparent;
+    color: var(--color-white);
+    border: 2px solid var(--color-white);
+}
+
+.btn-outline-white:hover {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+/* --- BARRA DE SELECCIÓN ACTIVA --- */
+.selection-bar {
+    background: #f9f9f9;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 70px;
+    /* Se queda pegada bajo la navbar */
+    z-index: 900;
+}
+
+.bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar-flex p {
+    font-size: 0.9rem;
+    color: var(--color-dark-gray);
+    margin: 0;
+}
+
+.btn-change {
+    background: var(--color-black);
+    color: var(--color-white);
+    border: none;
+    padding: 8px 15px;
+    font-family: var(--font-heading);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-change:hover {
+    background: var(--color-dark-gray);
+}
+
+/* --- LÓGICA DE FILTRADO (HIDDEN POR DEFECTO) --- */
+#filtered-content {
+    display: none;
+    /* El JS lo pondrá en block al elegir */
+}
+
+.loc-data {
+    display: none;
+    /* El JS mostrará solo la clase seleccionada */
+}
+
+/* --- RESPONSIVE PARA EL SPLIT --- */
+@media (max-width: 768px) {
+    .split-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .split-option {
+        width: 100%;
+        padding: 80px 20px;
+    }
+
+    .split-content h2 {
+        font-size: 1.8rem;
     }
 }
