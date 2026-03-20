@@ -943,7 +943,7 @@ footer p {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
     position: sticky;
-    top: 70px;
+    top: 60px;
     /* Se queda pegada bajo la navbar */
     z-index: 900;
 }
