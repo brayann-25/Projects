@@ -884,27 +884,27 @@ footer p {
 
 /* Lado Eixample (Oscuro) */
 .eixample-side {
-    background-position: center;
-    background-repeat: no-repeat;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/local-eixample-cropped.png');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./images/local-eixample-cropped.png');
     background-size: cover;
-    /* background-color: var(--color-black); */
+    background-repeat: no-repeat; 
+    background-position: center;
     color: var(--color-white);
+
 }
 
 /* Lado Nou Barris (Claro) */
 .noubarris-side {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('./images/local-virrei.jpeg');
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./images/local-virrei.jpeg');
-    background-size: cover;
     color: var(--color-white);
 }
 
 /* Efecto expansión al pasar el ratón */
 @media (min-width: 769px) {
     .split-option:hover {
-        flex: 1.4;
+        flex: 1.6;
     }
 }
 
@@ -917,7 +917,7 @@ footer p {
 
 .tag {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 3px;
     text-transform: uppercase;
     opacity: 0.8;
