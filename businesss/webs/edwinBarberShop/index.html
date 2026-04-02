@@ -4,398 +4,580 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edwin Stop Barber Shop | Barcelona</title>
+    <title>Edwin Stop Barber Shop | Barbería en Barcelona con corte, barba y reserva online</title>
+    <meta name="description"
+        content="Barbería en Barcelona con sedes en Eixample y Nou Barris. Cortes de precisión, arreglo de barba, asesoramiento de imagen y reserva online en Edwin Stop Barber Shop.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="theme-color" content="#12100d">
+    <meta name="author" content="Edwin Stop Barber Shop">
+    <meta name="format-detection" content="telephone=yes">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Edwin Stop Barber Shop | Barbería premium en Barcelona">
+    <meta property="og:description"
+        content="Corte, barba y estilo masculino en Eixample y Nou Barris. Reserva tu cita en una barbería con carácter, técnica y atención personalizada.">
+    <meta property="og:image" content="./images/local/local-eixample.jpeg">
+    <meta property="og:site_name" content="Edwin Stop Barber Shop">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Edwin Stop Barber Shop | Barbería premium en Barcelona">
+    <meta name="twitter:description"
+        content="Dos barberías en Barcelona, reservas online y una experiencia de corte y barba con identidad propia.">
+    <meta name="twitter:image" content="./images/local/local-eixample.jpeg">
+    <link rel="alternate" hreflang="es-ES" href="/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="index.css">
-
-    <link rel="icon" type="image/png" href="./images/favicon/web-app-manifest-192x192.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./images/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png" />
-    <meta name="apple-mobile-web-app-title" content="Stop Barber" />
-    <link rel="manifest" href="./images/favicon/site.webmanifest" />
-
-    <script src="scripts.js" defer></script>    
+    <link rel="icon" type="image/png" href="./images/favicon/web-app-manifest-192x192.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./images/favicon/favicon.svg">
+    <link rel="shortcut icon" href="./images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Stop Barber">
+    <link rel="manifest" href="./images/favicon/site.webmanifest">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "#organization",
+                    "name": "Edwin Stop Barber Shop",
+                    "url": "/",
+                    "logo": "./images/logos/stop-baber-logo-black.png",
+                    "sameAs": [
+                        "https://instagram.com/edwinbarbershop_"
+                    ]
+                },
+                {
+                    "@type": "HairSalon",
+                    "@id": "#eixample",
+                    "name": "Edwin Stop Barber Shop Eixample",
+                    "image": "./images/local/local-eixample.jpeg",
+                    "description": "Barbería en Eixample especializada en corte clásico, fades, barba y asesoramiento de imagen.",
+                    "telephone": "+34 936 77 57 57",
+                    "priceRange": "€€",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer de València, 501",
+                        "addressLocality": "Barcelona",
+                        "postalCode": "08013",
+                        "addressCountry": "ES"
+                    },
+                    "openingHoursSpecification": [
+                        {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday"
+                            ],
+                            "opens": "10:00",
+                            "closes": "20:30"
+                        }
+                    ],
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.8",
+                        "reviewCount": "176"
+                    },
+                    "parentOrganization": {
+                        "@id": "#organization"
+                    }
+                },
+                {
+                    "@type": "HairSalon",
+                    "@id": "#noubarris",
+                    "name": "Edwin Stop Barber Shop Nou Barris",
+                    "image": "./images/local/local-noubarris.jpeg",
+                    "description": "Barbería en Nou Barris con servicios de corte, barba y mantenimiento de estilo masculino.",
+                    "telephone": "+34 936 77 57 57",
+                    "priceRange": "€€",
+                    "address": {
+                        "@type": "PostalAddress",
+                        "streetAddress": "Carrer del Doctor Pi i Molist, 14",
+                        "addressLocality": "Barcelona",
+                        "postalCode": "08031",
+                        "addressCountry": "ES"
+                    },
+                    "openingHoursSpecification": [
+                        {
+                            "@type": "OpeningHoursSpecification",
+                            "dayOfWeek": [
+                                "Monday",
+                                "Tuesday",
+                                "Wednesday",
+                                "Thursday",
+                                "Friday",
+                                "Saturday"
+                            ],
+                            "opens": "10:00",
+                            "closes": "20:30"
+                        }
+                    ],
+                    "aggregateRating": {
+                        "@type": "AggregateRating",
+                        "ratingValue": "4.5",
+                        "reviewCount": "173"
+                    },
+                    "parentOrganization": {
+                        "@id": "#organization"
+                    }
+                },
+                {
+                    "@type": "FAQPage",
+                    "@id": "#faq",
+                    "mainEntity": [
+                        {
+                            "@type": "Question",
+                            "name": "¿Se puede reservar online en Edwin Stop Barber Shop?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Sí. Puedes reservar online en ambas sedes, Eixample y Nou Barris, desde los enlaces de Booksy integrados en la página."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Qué servicios ofrece la barbería?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "La barbería ofrece corte masculino, fades, arreglo de barba, perfilado, asesoramiento de estilo y mantenimiento completo de imagen."
+                            }
+                        },
+                        {
+                            "@type": "Question",
+                            "name": "¿Dónde están las barberías de Edwin Stop Barber Shop?",
+                            "acceptedAnswer": {
+                                "@type": "Answer",
+                                "text": "Edwin Stop Barber Shop cuenta con dos ubicaciones en Barcelona: Carrer de València 501 en Eixample y Carrer del Doctor Pi i Molist 14 en Nou Barris."
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+    <script src="scripts.js" defer></script>
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
-    <header>
-        <nav class="navbar">
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
             <div class="container nav-container">
-                <a href="#hero" class="logo">STOP BARBER</a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <i class="fas fa-bars"></i>
-                </div>
+                <a href="#hero" class="brand-mark" aria-label="Ir al inicio de Edwin Stop Barber Shop">
+                    <span class="brand-mark__eyebrow">Barcelona</span>
+                    <span class="brand-mark__name">STOP BARBER</span>
+                </a>
+                <button class="menu-toggle" id="mobile-menu" aria-expanded="false" aria-controls="nav-list"
+                    aria-label="Abrir menú">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
                 <ul class="nav-menu" id="nav-list">
-                    <li><a href="#hero" class="nav-link">Inicio</a></li>
+                    <li><a href="#about" class="nav-link">Esencia</a></li>
                     <li><a href="#services" class="nav-link">Servicios</a></li>
                     <li><a href="#gallery" class="nav-link">Trabajos</a></li>
-                    <li><a href="#location-selector" class="nav-link">Locales</a></li>
-                    <li><a href="#location-selector" class="nav-btn">Reservar</a></li>
+                    <li><a href="#locations" class="nav-link">Locales</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                    <li><a href="#booking" class="nav-cta">Reservar</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section id="hero">
-        <div class="container">
-            <img src="images/logos/stop-baber-logo-white.png" alt="Edwin Stop Barber Shop Logo" class="logo">
-            <p class="subtitle">Excelencia en barbería clásica y moderna en Barcelona</p>
-
-            <div class="highlights">
-                <span>Eixample</span> • <span>Nou Barris</span> • <span>Atención Personalizada</span>
-            </div>
-
-            <div class="cta-group">
-                <a href="#split-container-selector" class="btn btn-primary"
-                    style="border-color:white; background:white; color:black;">Elegir Barbería</a>
-                <a href="#about" class="btn btn-secondary">Conócenos</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Nuestra Esencia</h2>
-            <p>Más que una barbería, somos un espacio de desconexión. Combinamos la técnica tradicional con las
-                tendencias más actuales.</p>
-            <p>Especialistas en cuidado masculino, estamos aquí para asesorarte y conseguir el estilo que mejor se
-                adapta a ti en cualquiera de nuestros dos locales.</p>
-        </div>
-    </section>
-
-    <section id="services" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Lo que hacemos</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-cut"></i></div>
-                    <h3>Corte de Cabello</h3>
-                    <p>Cortes clásicos, fades modernos y tendencias actuales.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-user-tie"></i></div>
-                    <h3>Arreglo de Barba</h3>
-                    <p>Perfilado y ritual de toalla caliente.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-comments"></i></div>
-                    <h3>Asesoramiento</h3>
-                    <p>Encuentra el look que mejor encaja con tus facciones.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-magic"></i></div>
-                    <h3>Estilismo</h3>
-                    <p>Productos de alta gama para tu peinado diario.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="gallery" class="reveal">
-        <div class="container">
-            <h2 class="section-title">Nuestros Trabajos</h2>
-            <p class="section-subtitle">Precisión y estilo en cada corte realizado por nuestro equipo</p>
-            <div class="gallery-container">
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-2.jpeg" alt="Degradado clásico" loading="lazy">
-                    <div class="gallery-overlay"><span>Classic Fade</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-2-1.jpeg" alt="Corte Moderno" loading="lazy">
-                    <div class="gallery-overlay"><span>Modern Quiff</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-4.jpeg" alt="Barba y Corte" loading="lazy">
-                    <div class="gallery-overlay"><span>Beard Trim</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-3.jpeg" alt="Corte Tijera" loading="lazy">
-                    <div class="gallery-overlay"><span>Scissor Cut</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-5.jpeg" alt="Corte Tijera" loading="lazy">
-                    <div class="gallery-overlay"><span>Tapper Fade</span></div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/haircuts/haircut-6.jpeg" alt="Corte Tijera" loading="lazy">
-                    <div class="gallery-overlay"><span>Scissor Cut</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="location-selector" style="padding: 80px 0px 0px; background-color: var(--color-light-gray);">
-        <div class="container">
-            <h2 class="section-title">Elige tu Barbería</h2>
-        </div>
-        <div id="split-container-selector" class="split-container">
-            <div class="split-option eixample-side" onclick="selectBarber('eixample')">
-                <div class="split-content">
-                    <span class="tag">BARCELONA</span>
-                    <h2>EIXAMPLE</h2>
-                    <p>Carrer de València, 501</p>
-                    <button class="btn btn-outline-white">SELECCIONAR</button>
-                </div>
-            </div>
-            <div class="split-option noubarris-side" onclick="selectBarber('noubarris')">
-                <div class="split-content">
-                    <span class="tag">BARCELONA</span>
-                    <h2>NOU BARRIS</h2>
-                    <p>Carrer del Doctor Pi i Molist, 14</p>
-                    <button class="btn btn-outline-white">SELECCIONAR</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div id="filtered-content">
-
-        <div class="selection-bar">
-            <div class="container bar-flex">
-                <p>Estás viendo: <strong id="selected-loc-name">Eixample</strong></p>
-                <button class="btn-change" onclick="resetSelection()">CAMBIAR BARBERÍA</button>
-            </div>
-        </div>
-
-        <section id="reviews" class="reveal">
-            <div class="container">
-                <h2 class="section-title">Lo que dicen de nosotros</h2>
-
-                <div class="loc-data eixample-data">
-                    <div class="rating-badge"><strong>4,8</strong> / 5 <br><span
-                            style="font-size: 0.9rem; color: #aaa;">Basado en 176 reseñas</span></div>
-                    <div class="reviews-grid">
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Excelente servicio, calidad-precio y muy buena atención. Sin duda mi
-                                barbería de confianza en el barrio."</p>
-                            <p style="font-weight: bold;">— Cliente Google</p>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Los barberos saben exactamente lo que hacen. Corte perfecto y
-                                ambiente muy agradable. Volveré sin dudarlo."</p>
-                            <p style="font-weight: bold;">— Juan M.</p>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Profesionales de verdad. Escuchan lo que quieres y te asesoran con
-                                criterio. La mejor barbería de Barcelona."</p>
-                            <p style="font-weight: bold;">— Carlos R.</p>
-                        </div>
+    <main id="main-content">
+        <section id="hero" class="hero">
+            <div class="hero-noise" aria-hidden="true"></div>
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Barbería en Barcelona con identidad propia</p>
+                    <h1>Corte preciso, barba impecable y una atmósfera que se recuerda.</h1>
+                    <p class="hero-lead">
+                        Edwin Stop Barber Shop une técnica clásica, detalle contemporáneo y reserva online fácil en
+                        Eixample y Nou Barris.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#booking" class="btn btn-primary">Reservar cita</a>
+                        <a href="#gallery" class="btn btn-secondary">Ver trabajos</a>
                     </div>
+                    <ul class="hero-points" aria-label="Puntos destacados">
+                        <li>Fades y cortes de precisión</li>
+                        <li>Ritual de barba y perfilado</li>
+                        <li>Dos sedes en Barcelona</li>
+                    </ul>
                 </div>
-
-                <div class="loc-data noubarris-data">
-                    <div class="rating-badge"><strong>4,5</strong> / 5 <br><span
-                            style="font-size: 0.9rem; color: #aaa;">Basada en 173 reseñas</span></div>
-                    <div class="reviews-grid">
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Increíble apertura en Nou Barris. El local ha quedado espectacular y
-                                el
-                                trato es de diez."</p>
-                            <p style="font-weight: bold;">— Vecino del barrio</p>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Acababa de abrir y ya me siento como en casa. Los barberos son muy
-                                atentos y el local tiene un ambiente único."</p>
-                            <p style="font-weight: bold;">— David L.</p>
-                        </div>
-                        <div class="review-card">
-                            <div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                            <p class="review-text">"Esperaba con ansias esta barbería en el barrio. Ha superado todas
-                                mis expectativas. ¡Excelente debut!"</p>
-                            <p style="font-weight: bold;">— Miguel S.</p>
-                        </div>
+                <div class="hero-visual reveal">
+                    <div class="hero-frame hero-frame--main">
+                        <img src="./images/local/local-eixample.jpeg"
+                            alt="Interior de Edwin Stop Barber Shop en Barcelona con ambiente premium">
+                    </div>
+                    <div class="hero-frame hero-frame--accent">
+                        <img src="./images/haircuts/haircut-2.jpeg"
+                            alt="Corte fade realizado en Edwin Stop Barber Shop">
+                    </div>
+                    <div class="hero-card hero-card--rating">
+                        <span class="hero-card__label">Reseñas reales</span>
+                        <strong>4,8 / 5</strong>
+                        <p>Clientes que vuelven por el detalle y la constancia.</p>
+                    </div>
+                    <div class="hero-card hero-card--hours">
+                        <span class="hero-card__label">Horario</span>
+                        <strong>Lun-Sáb</strong>
+                        <p>Desde las 10:00</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="pricing" class="reveal">
-            <div class="container">
-                <h2 class="section-title">Nuestras Tarifas</h2>
-                <p class="section-subtitle">Selecciona el servicio que deseas</p>
+        <section class="trust-strip" aria-label="Puntos de confianza">
+            <div class="container trust-strip__grid">
+                <p>Reservas online en segundos</p>
+                <p>Especialistas en imagen masculina</p>
+                <p>Eixample y Nou Barris</p>
+                <p>Atención personalizada</p>
+            </div>
+        </section>
 
-                <div class="loc-data eixample-data">
-                    <div class="pricing-cards-grid">
-                        <div class="pricing-card">
-                            <div class="pc-header">
-                                <h4>Corte Clásico</h4>
-                                <span class="pc-price">17,00 €</span>
-                            </div>
-                            <p class="pc-desc">Corte de pelo caballero con acabado profesional y lavado incluido.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 40 min</span></div>
-                        </div>
-
-                        <div class="pricing-card featured">
-                            <div class="pc-badge">El más popular</div>
-                            <div class="pc-header">
-                                <h4>Corte + Barba</h4>
-                                <span class="pc-price">22,00 €</span>
-                            </div>
-                            <p class="pc-desc">Servicio completo de corte y arreglo de barba con perfilado.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 55 min</span></div>
-                        </div>
-
-                        <div class="pricing-card">
-                            <div class="pc-header">
-                                <h4>Arreglo de Barba</h4>
-                                <span class="pc-price">10,00 €</span>
-                            </div>
-                            <p class="pc-desc">Perfilado y rebajado de barba con asesoramiento de estilo.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 20 min</span></div>
-                        </div>
-                    </div>
-                    
-                    <p style="margin-top: 30px; font-size: 0.9rem; color: var(--color-gray);">Consulta nuestro sistema de
-                        reservas para ver todos los servicios (tintes, jubilados, etc.)</p>
-                    <a href="https://booksy.com/es-es/dl/show-business/120085?utm_medium=c2c_referral" target="_blank" class="btn btn-outline-dark"
-                        style="margin-top: 15px;">Ver todos y Reservar</a>
+        <section id="about" class="section section-dark reveal">
+            <div class="container story-grid">
+                <div class="story-copy">
+                    <p class="eyebrow">Nuestra esencia</p>
+                    <h2 class="section-title">No vendemos un corte rápido. Diseñamos presencia.</h2>
+                    <p class="section-text">
+                        Cada servicio se trabaja con lectura facial, técnica limpia y una conversación honesta sobre lo
+                        que te favorece. El resultado importa, pero también cómo te sientes al salir.
+                    </p>
+                    <p class="section-text">
+                        Por eso el espacio, la música, la precisión de la línea y el ritmo de la experiencia forman
+                        parte del servicio.
+                    </p>
                 </div>
-
-                <div class="loc-data noubarris-data">
-                    <div class="pricing-cards-grid">
-                        <div class="pricing-card">
-                            <div class="pc-header">
-                                <h4>Corte Caballero</h4>
-                                <span class="pc-price">13,00 €</span>
-                            </div>
-                            <p class="pc-desc">Corte profesional adaptado a las últimas tendencias en Nou Barris.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 30 min</span></div>
-                        </div>
-
-                        <div class="pricing-card featured">
-                            <div class="pc-badge">Recomendado</div>
-                            <div class="pc-header">
-                                <h4>Corte + Barba</h4>
-                                <span class="pc-price">18,00 €</span>
-                            </div>
-                            <p class="pc-desc">La mejor opción para un mantenimiento total de imagen masculina.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 45 min</span></div>
-                        </div>
-
-                        <div class="pricing-card">
-                            <div class="pc-header">
-                                <h4>Corte Jubilado</h4>
-                                <span class="pc-price">10,00 €</span>
-                            </div>
-                            <p class="pc-desc">Precio especial para nuestros clientes más veteranos.</p>
-                            <div class="pc-meta"><span><i class="far fa-clock"></i> 30 min</span></div>
-                        </div>
+                <div class="story-aside">
+                    <div class="manifesto-card">
+                        <span class="manifesto-card__index">01</span>
+                        <h3>Clásico y actual</h3>
+                        <p>Respeto por la barbería tradicional con ejecución contemporánea.</p>
                     </div>
-                <p style="margin-top: 30px; font-size: 0.9rem; color: var(--color-gray);">Consulta nuestro sistema de
-                    reservas para ver todos los servicios (tintes, jubilados, etc.)</p>
-                <a href="https://booksy.com/es-es/dl/show-business/152150?utm_medium=c2c_referral" target="_blank" class="btn btn-outline-dark"
-                    style="margin-top: 15px;">Ver todos y Reservar</a>
+                    <div class="manifesto-card">
+                        <span class="manifesto-card__index">02</span>
+                        <h3>Asesoramiento real</h3>
+                        <p>Te recomendamos lo que encaja contigo, no lo que está de moda sin criterio.</p>
+                    </div>
+                    <div class="manifesto-card">
+                        <span class="manifesto-card__index">03</span>
+                        <h3>Barbería de barrio con nivel alto</h3>
+                        <p>Dos locales, una misma exigencia en el detalle.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="info" class="reveal">
+        <section id="services" class="section reveal">
             <div class="container">
-                <div class="loc-data eixample-data">
-                    <div class="info-container">
-                        <div class="info-details">
-                            <h3>Visítanos en Eixample</h3>
-                            <div class="info-item"><i class="fas fa-map-marker-alt"></i>
-                               <a href="https://maps.google.com/?q=Carrer+de+València,+501,+08013+Barcelona" target="_blank">Carrer de València, 501, 08013 Barcelona</a>
-                            </div>
-                            <div class="info-item"><i class="fas fa-phone-alt"></i>
-                                <a href="tel:+34936775757">936 77 57 57</a>
-                            </div>
-                            <div class="info-item"><i class="far fa-clock"></i>
-                                <div>
-                                    <strong>Horario:</strong><br>
-                                    Lunes a Sábado<br>
-                                    Apertura a las 10:00
+                <p class="eyebrow eyebrow-center">Servicios de barbería</p>
+                <h2 class="section-title section-title-center">Lo esencial, ejecutado con precisión.</h2>
+                <div class="services-grid">
+                    <article class="service-card">
+                        <span class="service-card__number">01</span>
+                        <i class="fas fa-scissors" aria-hidden="true"></i>
+                        <h3>Corte de cabello</h3>
+                        <p>Cortes clásicos, degradados, textura y acabados limpios adaptados a tu estilo y ritmo.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__number">02</span>
+                        <i class="fas fa-user" aria-hidden="true"></i>
+                        <h3>Arreglo de barba</h3>
+                        <p>Perfilado, rebajado y definición con una línea cuidada y un acabado que aguanta.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__number">03</span>
+                        <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                        <h3>Asesoramiento de estilo</h3>
+                        <p>Recomendaciones honestas según facciones, densidad del cabello y mantenimiento realista.</p>
+                    </article>
+                    <article class="service-card">
+                        <span class="service-card__number">04</span>
+                        <i class="fas fa-gem" aria-hidden="true"></i>
+                        <h3>Acabado premium</h3>
+                        <p>Productos de calidad y pequeños rituales que elevan la experiencia sin artificio.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section section-contrast reveal">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Trabajos reales</p>
+                        <h2 class="section-title">Texturas, fades y barbas con intención.</h2>
+                    </div>
+                    <p class="section-note">
+                        Una muestra del tipo de acabado que buscan quienes priorizan presencia, proporción y limpieza de
+                        línea.
+                    </p>
+                </div>
+                <div class="gallery-grid">
+                    <figure class="gallery-item gallery-item--large">
+                        <img src="./images/haircuts/haircut-2-1.jpeg"
+                            alt="Corte moderno con volumen superior y laterales degradados">
+                        <figcaption>Modern quiff</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./images/haircuts/haircut-4.jpeg"
+                            alt="Perfilado de barba con acabado nítido y simétrico">
+                        <figcaption>Beard trim</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./images/haircuts/haircut-3.jpeg"
+                            alt="Corte a tijera con textura natural y contorno limpio">
+                        <figcaption>Scissor cut</figcaption>
+                    </figure>
+                    <figure class="gallery-item">
+                        <img src="./images/haircuts/haircut-5.jpeg"
+                            alt="Taper fade con transición suave y definición en la nuca">
+                        <figcaption>Taper fade</figcaption>
+                    </figure>
+                    <figure class="gallery-item gallery-item--wide">
+                        <img src="./images/haircuts/haircut-6.jpeg"
+                            alt="Corte masculino con forma definida y acabado profesional">
+                        <figcaption>Precision finish</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="locations" class="section reveal">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Locales</p>
+                        <h2 class="section-title">Elige tu barbería en Barcelona.</h2>
+                    </div>
+                    <p class="section-note">
+                        Misma identidad, distinto pulso de barrio. Cambia entre sedes para ver precios, reseñas,
+                        ubicación y reserva.
+                    </p>
+                </div>
+
+                <div class="location-switcher" id="booking">
+                    <div class="location-tabs" role="tablist" aria-label="Seleccionar local">
+                        <button class="location-tab is-active" type="button" data-location-trigger="eixample"
+                            aria-pressed="true">
+                            <span class="location-tab__city">Barcelona</span>
+                            <strong>Eixample</strong>
+                            <span>Carrer de València, 501</span>
+                        </button>
+                        <button class="location-tab" type="button" data-location-trigger="noubarris"
+                            aria-pressed="false">
+                            <span class="location-tab__city">Barcelona</span>
+                            <strong>Nou Barris</strong>
+                            <span>Carrer del Doctor Pi i Molist, 14</span>
+                        </button>
+                    </div>
+
+                    <div class="selection-bar" aria-live="polite">
+                        <p><strong id="selected-loc-name">Eixample</strong></p>
+                        <div class="selection-actions">
+                            <button id="change-location-btn" class="btn btn-outline" type="button">
+                                Cambiar
+                            </button>
+                            <a id="selected-booking-link" class="btn btn-primary" target="_blank" rel="noopener"
+                                href="https://booksy.com/es-es/dl/show-business/120085?utm_medium=c2c_referral">
+                                Reservar
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="filtered-content">
+                        <div class="location-panel is-active" data-location-panel="eixample">
+                            <div class="location-hero">
+                                <div class="location-hero__copy">
+                                    <p class="eyebrow">Eixample</p>
+                                    <h3>Una barbería con ritmo urbano y detalle fino.</h3>
+                                    <p>
+                                        Ideal si buscas corte, barba y un servicio completo con ambiente elegante y
+                                        cómodo en el centro de Barcelona.
+                                    </p>
+                                    <ul class="location-meta">
+                                        <li><i class="fas fa-star" aria-hidden="true"></i> 4,8 / 5 en 176 reseñas</li>
+                                        <li><i class="far fa-clock" aria-hidden="true"></i> Lunes a sábado desde las 10:00</li>
+                                        <li><i class="fas fa-phone-alt" aria-hidden="true"></i> 936 77 57 57</li>
+                                    </ul>
+                                </div>
+                                <div class="location-hero__media">
+                                    <img src="./images/local/local-eixample-croped.png"
+                                        alt="Fachada o interior del local de Edwin Stop Barber Shop Eixample">
                                 </div>
                             </div>
-                            <div class="info-actions">
-                                <a href="tel:+34936775757" class="btn btn-outline-dark">Llamar Ahora</a>
-                                <a href="https://maps.google.com/?q=Carrer+de+València,+501,+08013+Barcelona" class="btn btn-outline-dark" target="_blank">Cómo llegar</a>
-                            </div>
-                        </div>
-                        <div
-                            style="background: #eee;width: 100%;max-width: 500px;height: 300px;display: flex;align-items: center;justify-content: center;border: 1px solid #ddd;">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4621.3432566138545!2d2.1769963128277805!3d41.405077871178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a35810ea32af%3A0xaa1641ce1551269d!2sEdwin%20stop%20barber%20shop!5e1!3m2!1ses!2ses!4v1773971487975!5m2!1ses!2ses"
-                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="loc-data noubarris-data">
-                    <div class="info-container">
-                        <div class="info-details">
-                            <h3>Visítanos en Nou Barris</h3>
-                            <div class="info-item"><i class="fas fa-map-marker-alt"></i>
-                                <a href="https://maps.google.com/?q=Carrer+del+Doctor+Pi+y+Molist,+14,+08021+Barcelona" target="_blank">Carrer del Doctor Pi y Molist, 14, 08021 Barcelona</a>
+                            <div class="detail-grid">
+                                <article class="detail-card">
+                                    <h4>Tarifas destacadas</h4>
+                                    <div class="pricing-list">
+                                        <div class="pricing-item">
+                                            <span>Corte clásico</span>
+                                            <strong>17,00 €</strong>
+                                        </div>
+                                        <div class="pricing-item pricing-item--featured">
+                                            <span>Corte + barba</span>
+                                            <strong>22,00 €</strong>
+                                        </div>
+                                        <div class="pricing-item">
+                                            <span>Arreglo de barba</span>
+                                            <strong>10,00 €</strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="detail-card">
+                                    <h4>Lo que valoran los clientes</h4>
+                                    <blockquote>
+                                        “Excelente servicio, calidad-precio y una atención que hace que quieras volver.”
+                                    </blockquote>
+                                    <blockquote>
+                                        “Saben exactamente lo que hacen. Corte limpio, buen ambiente y criterio.”
+                                    </blockquote>
+                                </article>
+                                <article class="detail-card">
+                                    <h4>Ubicación y reserva</h4>
+                                    <p>Carrer de València, 501, 08013 Barcelona</p>
+                                    <div class="detail-actions">
+                                        <a class="btn btn-outline" href="tel:+34936775757">Llamar</a>
+                                        <a class="btn btn-outline" target="_blank" rel="noopener"
+                                            href="https://maps.google.com/?q=Carrer+de+Valencia,+501,+08013+Barcelona">Cómo llegar</a>
+                                    </div>
+                                </article>
                             </div>
-                            <!-- <div class="info-item"><i class="fas fa-phone-alt"></i>
-                                <div>931 22 33 44</div>
-                            </div> -->
-                            <div class="info-item"><i class="far fa-clock"></i>
-                                <div>
-                                    <strong>Horario:</strong><br>
-                                    Lunes a Sábado<br>
-                                    Apertura a las 10:00
+                        </div>
+
+                        <div class="location-panel" data-location-panel="noubarris">
+                            <div class="location-hero">
+                                <div class="location-hero__copy">
+                                    <p class="eyebrow">Nou Barris</p>
+                                    <h3>Barbería de barrio con energía nueva y nivel serio.</h3>
+                                    <p>
+                                        Una sede pensada para quien quiere mantenimiento constante, cercanía y muy buen
+                                        resultado sin moverse del barrio.
+                                    </p>
+                                    <ul class="location-meta">
+                                        <li><i class="fas fa-star" aria-hidden="true"></i> 4,5 / 5 en 173 reseñas</li>
+                                        <li><i class="far fa-clock" aria-hidden="true"></i> Lunes a sábado desde las 10:00</li>
+                                        <li><i class="fas fa-phone-alt" aria-hidden="true"></i> 936 77 57 57</li>
+                                    </ul>
+                                </div>
+                                <div class="location-hero__media">
+                                    <img src="./images/local/local-noubarris.jpeg"
+                                        alt="Local de Edwin Stop Barber Shop Nou Barris en Barcelona">
                                 </div>
                             </div>
-                            <div class="info-actions">
-                                <a href="tel:+34936775757" class="btn btn-outline-dark">Llamar Ahora</a>
-                                <a href="https://maps.google.com/?q=Carrer+del+Doctor+Pi+y+Molist,+14,+08021+Barcelona" class="btn btn-outline-dark" target="_blank">Cómo llegar</a>
+
+                            <div class="detail-grid">
+                                <article class="detail-card">
+                                    <h4>Tarifas destacadas</h4>
+                                    <div class="pricing-list">
+                                        <div class="pricing-item">
+                                            <span>Corte caballero</span>
+                                            <strong>13,00 €</strong>
+                                        </div>
+                                        <div class="pricing-item pricing-item--featured">
+                                            <span>Corte + barba</span>
+                                            <strong>18,00 €</strong>
+                                        </div>
+                                        <div class="pricing-item">
+                                            <span>Corte jubilado</span>
+                                            <strong>10,00 €</strong>
+                                        </div>
+                                    </div>
+                                </article>
+                                <article class="detail-card">
+                                    <h4>Lo que valoran los clientes</h4>
+                                    <blockquote>
+                                        “El local ha quedado espectacular y el trato es de diez.”
+                                    </blockquote>
+                                    <blockquote>
+                                        “Muy atentos, ambiente único y un debut que superó expectativas.”
+                                    </blockquote>
+                                </article>
+                                <article class="detail-card">
+                                    <h4>Ubicación y reserva</h4>
+                                    <p>Carrer del Doctor Pi i Molist, 14, 08031 Barcelona</p>
+                                    <div class="detail-actions">
+                                        <a class="btn btn-outline" href="tel:+34936775757">Llamar</a>
+                                        <a class="btn btn-outline" target="_blank" rel="noopener"
+                                            href="https://maps.google.com/?q=Carrer+del+Doctor+Pi+i+Molist,+14,+08031+Barcelona">Cómo llegar</a>
+                                    </div>
+                                </article>
                             </div>
-                        </div>
-                        <div
-                            style="background: #eee;width: 100%;max-width: 500px;height: 300px;display: flex;align-items: center;justify-content: center;border: 1px solid #ddd;">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4619.499849613203!2d2.1720405128286373!3d41.430990171174614!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bd8fefad5597%3A0x65beb71b37eaa7ed!2sStop%20barber%20shop!5e1!3m2!1ses!2ses!4v1773967398889!5m2!1ses!2ses"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-    </div>
-    <footer>
-        <div class="container">
-            <img src="images/logos/stop-baber-logo-white.png" alt="Edwin Stop Barber Shop Logo" class="logo-footer">
-            <p><strong>Edwin Stop Barber Shop</strong></p>
-            <p>© 2026 Todos los derechos reservados.</p>
-        </div>
-        <div class="social-module">
-            <div class="social-links">
-                <a href="https://instagram.com/edwinbarbershop_" class="social-item" target="_blank" rel="noopener"
-                    aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                    <span>Instagram</span>
-                </a>
+        <section id="faq" class="section section-dark reveal">
+            <div class="container faq-grid">
+                <div>
+                    <p class="eyebrow">Preguntas frecuentes</p>
+                    <h2 class="section-title">Información útil antes de reservar.</h2>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>¿Se puede reservar online?</summary>
+                        <p>Sí. Ambas barberías tienen enlace directo de reserva para elegir servicio, hora y profesional.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Qué servicios son los más solicitados?</summary>
+                        <p>Los más demandados son corte de cabello, corte con barba y perfilado de barba.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Atendéis sin cita previa?</summary>
+                        <p>La reserva online es la opción más segura para evitar esperas y asegurar disponibilidad.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>¿Dónde están las barberías?</summary>
+                        <p>En Carrer de València 501, Eixample, y en Carrer del Doctor Pi i Molist 14, Nou Barris.</p>
+                    </details>
+                </div>
             </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <img src="./images/logos/stop-baber-logo-white.png" alt="Logotipo de Edwin Stop Barber Shop"
+                    class="logo-footer">
+                <p class="footer-copy">
+                    Edwin Stop Barber Shop es una barbería en Barcelona centrada en corte masculino, barba, estilo y
+                    reserva digital simple.
+                </p>
+            </div>
+            <div>
+                <h2 class="footer-title">Sedes</h2>
+                <p>Eixample · Carrer de València, 501</p>
+                <p>Nou Barris · Carrer del Doctor Pi i Molist, 14</p>
+            </div>
+            <div>
+                <h2 class="footer-title">Contacto</h2>
+                <p><a href="tel:+34936775757">936 77 57 57</a></p>
+                <p><a href="https://instagram.com/edwinbarbershop_" target="_blank" rel="noopener">Instagram</a></p>
+                <p><a href="#booking">Reservar cita</a></p>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 Edwin Stop Barber Shop. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver al inicio">
-        <i class="fas fa-arrow-up"></i>
+    <button id="scroll-to-top" class="scroll-to-top" aria-label="Volver arriba">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
     </button>
-
 </body>
 
 </html>

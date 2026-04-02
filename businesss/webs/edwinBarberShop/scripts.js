@@ -1,111 +1,168 @@
-/**
- * Edwin Stop Barber Shop - Lógica de Navegación e Interacciones
- */
-
 /* eslint-env browser */
 
-// Utilidad: Throttle para limitar la frecuencia de ejecución y mejorar el rendimiento
-const throttle = (func, limit) => {
-  let inThrottle;
-  return function (...args) {
-    if (!inThrottle) {
-      func.apply(this, args);
-      inThrottle = true;
-      setTimeout(() => (inThrottle = false), limit);
-    }
+const throttle = (fn, limit) => {
+  let waiting = false;
+
+  return (...args) => {
+    if (waiting) return;
+    fn(...args);
+    waiting = true;
+    window.setTimeout(() => {
+      waiting = false;
+    }, limit);
   };
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   const mobileMenu = document.getElementById("mobile-menu");
   const navList = document.getElementById("nav-list");
-  const navLinks = document.querySelectorAll("a[href^='#']");
   const navbar = document.querySelector(".navbar");
   const scrollToTopBtn = document.getElementById("scroll-to-top");
+  const navLinks = document.querySelectorAll("a[href^='#']");
+  const locationButtons = document.querySelectorAll("[data-location-trigger]");
+  const locationPanels = document.querySelectorAll("[data-location-panel]");
+  const selectedLocationName = document.getElementById("selected-loc-name");
+  const bookingLink = document.getElementById("selected-booking-link");
+  const changeLocationBtn = document.getElementById("change-location-btn");
+  const locationTabs = document.querySelector(".location-tabs");
+  const selectionBar = document.querySelector(".selection-bar");
 
-  // 1. Abrir/Cerrar menú móvil
-  if (mobileMenu) {
+  const locationConfig = {
+    eixample: {
+      label: "Eixample",
+      bookingLabel: "Reservar",
+      bookingUrl:
+        "https://booksy.com/es-es/dl/show-business/120085?utm_medium=c2c_referral",
+    },
+    noubarris: {
+      label: "Nou Barris",
+      bookingLabel: "Reservar",
+      bookingUrl:
+        "https://booksy.com/es-es/dl/show-business/152150?utm_medium=c2c_referral",
+    },
+  };
+
+  const closeMenu = () => {
+    if (!navList || !mobileMenu) return;
+    navList.classList.remove("active");
+    mobileMenu.setAttribute("aria-expanded", "false");
+
+    const icon = mobileMenu.querySelector("i");
+    if (icon) {
+      icon.classList.remove("fa-times");
+      icon.classList.add("fa-bars");
+    }
+  };
+
+  if (mobileMenu && navList) {
     mobileMenu.addEventListener("click", () => {
-      navList.classList.toggle("active");
+      const isOpen = navList.classList.toggle("active");
+      mobileMenu.setAttribute("aria-expanded", String(isOpen));
 
-      // Animación del icono (Hamburguesa a X)
       const icon = mobileMenu.querySelector("i");
       if (icon) {
-        if (navList.classList.contains("active")) {
-          icon.classList.replace("fa-bars", "fa-times");
-        } else {
-          icon.classList.replace("fa-times", "fa-bars");
-        }
+        icon.classList.toggle("fa-bars", !isOpen);
+        icon.classList.toggle("fa-times", isOpen);
       }
     });
   }
 
-  // 2. Cerrar menú automáticamente al hacer clic en un enlace (para móviles)
   navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navList.classList.remove("active");
-      const icon = mobileMenu?.querySelector("i");
-      if (icon) {
-        icon.classList.replace("fa-times", "fa-bars");
-      }
+    link.addEventListener("click", (event) => {
+      const targetId = link.getAttribute("href");
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+      if (!target) return;
+
+      event.preventDefault();
+      const navHeight = navbar ? navbar.offsetHeight : 0;
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY - navHeight + 2;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      closeMenu();
     });
   });
 
-  // 3. Scroll suave (Smooth Scroll) con ajuste para el Navbar Fijo
-  navLinks.forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
-      const href = this.getAttribute("href");
+  const updateLocation = (location) => {
+    const config = locationConfig[location];
+    if (!config) return;
 
-      // Solo si es un enlace interno (comienza con # y no está vacío)
-      if (href.startsWith("#") && href !== "#") {
-        e.preventDefault();
-        const target = document.querySelector(href);
+    locationButtons.forEach((button) => {
+      const isActive = button.dataset.locationTrigger === location;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
 
-        if (target) {
-          // Altura exacta de tu navbar para que no tape el título de la sección
-          const navbarHeight = 70;
+    locationPanels.forEach((panel) => {
+      panel.classList.toggle(
+        "is-active",
+        panel.dataset.locationPanel === location
+      );
+    });
 
-          // Calculamos la posición real restando el navbar
-          const targetPosition =
-            target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    if (selectedLocationName) {
+      selectedLocationName.textContent = config.label;
+    }
 
-          window.scrollTo({
-            top: targetPosition,
-            behavior: "smooth",
-          });
-        }
-      }
+    if (bookingLink) {
+      bookingLink.textContent = config.bookingLabel;
+      bookingLink.href = config.bookingUrl;
+    }
+  };
+
+  locationButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      updateLocation(button.dataset.locationTrigger);
     });
   });
 
-  // 4. Consolidar listeners de scroll con throttle (Sombra del Nav y Botón Arriba)
+  if (changeLocationBtn && locationTabs) {
+    changeLocationBtn.addEventListener("click", () => {
+      const navHeight = navbar ? navbar.offsetHeight : 0;
+      const tabsPosition =
+        locationTabs.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+
+      window.scrollTo({
+        top: tabsPosition,
+        behavior: "smooth",
+      });
+
+      window.setTimeout(() => {
+        const activeButton = document.querySelector(
+          "[data-location-trigger].is-active"
+        );
+        activeButton?.focus();
+      }, 250);
+    });
+  }
+
+  updateLocation("eixample");
+
   const handleScroll = throttle(() => {
-    const scrollY = window.scrollY;
+    const currentY = window.scrollY;
 
-    // Efecto de scroll en la Navbar
     if (navbar) {
-      if (scrollY > 50) {
-        navbar.style.boxShadow = "0 4px 15px rgba(0,0,0,0.1)";
-        navbar.style.height = "60px"; // Se hace un poco más fino al hacer scroll
-      } else {
-        navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.05)";
-        navbar.style.height = "70px"; // Vuelve a su tamaño original
-      }
+      navbar.classList.toggle("is-scrolled", currentY > 24);
     }
 
-    // Mostrar/ocultar botón Scroll to Top
     if (scrollToTopBtn) {
-      if (scrollY > 300) {
-        scrollToTopBtn.classList.add("active");
-      } else {
-        scrollToTopBtn.classList.remove("active");
-      }
+      scrollToTopBtn.classList.toggle("active", currentY > 500);
     }
-  }, 150);
+
+    if (selectionBar) {
+      selectionBar.classList.toggle("is-compact", currentY > 220);
+    }
+  }, 120);
 
   window.addEventListener("scroll", handleScroll);
+  handleScroll();
 
-  // 5. Al hacer clic en el botón scroll-to-top, volver arriba del todo
   if (scrollToTopBtn) {
     scrollToTopBtn.addEventListener("click", () => {
       window.scrollTo({
@@ -114,94 +171,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-});
 
-// 6. Efecto de aparición al hacer scroll (Intersection Observer)
-const initScrollReveal = () => {
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.15, // Se activa cuando el 15% del elemento es visible
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
         entry.target.classList.add("active");
-        // Una vez que aparece, dejamos de observarlo para ahorrar recursos de memoria
         observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  const elementsToReveal = document.querySelectorAll(".reveal");
-  elementsToReveal.forEach((el) => observer.observe(el));
-};
-
-// Ejecutar cuando el DOM esté listo
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initScrollReveal);
-} else {
-  initScrollReveal();
-}
-
-/* =========================================
-   LÓGICA DEL SELECTOR DE SEDES (SPLIT)
-   ========================================= */
-
-/**
- * Función para seleccionar una barbería y filtrar el contenido
- * @param {string} location - 'eixample' o 'noubarris'
- */
-function selectBarber(location) {
-    const filteredContent = document.getElementById('filtered-content');
-    const locNameDisplay = document.getElementById('selected-loc-name');
-    const allLocData = document.querySelectorAll('.loc-data');
-    const specificData = document.querySelectorAll('.' + location + '-data');
-
-    // 1. Mostrar el contenedor principal que estaba oculto (display: none)
-    if (filteredContent) {
-        filteredContent.style.display = 'block';
+      });
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -40px 0px",
     }
+  );
 
-    // 2. Ocultar todos los bloques de datos de ambas sedes primero
-    allLocData.forEach(el => {
-        el.style.display = 'none';
-    });
-
-    // 3. Mostrar solo los bloques de la sede seleccionada
-    specificData.forEach(el => {
-        el.style.display = 'block';
-    });
-
-    // 4. Actualizar el nombre en la barra de selección superior
-    if (locNameDisplay) {
-        locNameDisplay.innerText = location === 'eixample' ? 'Eixample' : 'Nou Barris';
-    }
-
-    // 5. Scroll suave hacia el inicio del contenido filtrado
-    filteredContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    // 6. Si usas efectos de "reveal", reiniciamos la comprobación de scroll
-    if (typeof handleReveal === 'function') {
-        handleReveal();
-    }
-}
-
-/**
- * Función para volver al selector y cambiar de local
- */
-function resetSelection() {
-    const selector = document.getElementById('location-selector');
-    if (selector) {
-        selector.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
-// Asegurarnos de que al cargar la página el contenido esté oculto
-document.addEventListener('DOMContentLoaded', () => {
-    const filteredContent = document.getElementById('filtered-content');
-    if (filteredContent) {
-        filteredContent.style.display = 'none';
-    }
+  document.querySelectorAll(".reveal").forEach((element) => {
+    revealObserver.observe(element);
+  });
 });
