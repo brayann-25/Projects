@@ -185,7 +185,7 @@
                     <li><a href="#gallery" class="nav-link">Trabajos</a></li>
                     <li><a href="#locations" class="nav-link">Locales</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
-                    <li><a href="#booking" class="nav-cta">Reservar</a></li>
+                    <li><a href="#locations" class="nav-cta">Reservar</a></li>
                 </ul>
             </div>
         </nav>
@@ -323,7 +323,60 @@
                         línea.
                     </p>
                 </div>
-                <div class="gallery-grid">
+                <div class="work-carousel" data-carousel aria-roledescription="carousel">
+                    <div class="work-carousel__viewport">
+                        <div class="work-carousel__track" data-carousel-track>
+                            <figure class="work-slide is-active" data-carousel-slide>
+                                <img src="./images/haircuts/haircut-2-1.jpeg"
+                                    alt="Corte moderno con volumen superior y laterales degradados">
+                                <figcaption class="work-slide__caption">
+                                    <h3>Modern quiff</h3>
+                                </figcaption>
+                            </figure>
+                            <figure class="work-slide" data-carousel-slide>
+                                <img src="./images/haircuts/haircut-4.jpeg"
+                                    alt="Perfilado de barba con acabado n&iacute;tido y sim&eacute;trico">
+                                <figcaption class="work-slide__caption">
+                                    <h3>Beard trim</h3>
+                                </figcaption>
+                            </figure>
+                            <figure class="work-slide" data-carousel-slide>
+                                <img src="./images/haircuts/haircut-3.jpeg"
+                                    alt="Corte a tijera con textura natural y contorno limpio">
+                                <figcaption class="work-slide__caption">
+                                    <h3>Scissor cut</h3>
+                                </figcaption>
+                            </figure>
+                            <figure class="work-slide" data-carousel-slide>
+                                <img src="./images/haircuts/haircut-5.jpeg"
+                                    alt="Taper fade con transici&oacute;n suave y definici&oacute;n en la nuca">
+                                <figcaption class="work-slide__caption">
+                                    <h3>Taper fade</h3>
+                                </figcaption>
+                            </figure>
+                            <figure class="work-slide" data-carousel-slide>
+                                <img src="./images/haircuts/haircut-6.jpeg"
+                                    alt="Corte masculino con forma definida y acabado profesional">
+                                <figcaption class="work-slide__caption">
+                                    <h3>Precision finish</h3>
+                                </figcaption>
+                            </figure>
+                        </div>
+
+                        <div class="work-carousel__controls">
+                            <button class="work-carousel__button" type="button" data-carousel-prev
+                                aria-label="Ver trabajo anterior">
+                                <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                            </button>
+                            <div class="work-carousel__dots" data-carousel-dots aria-label="Seleccionar trabajo"></div>
+                            <button class="work-carousel__button" type="button" data-carousel-next
+                                aria-label="Ver siguiente trabajo">
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-grid gallery-grid--legacy" aria-hidden="true">
                     <figure class="gallery-item gallery-item--large">
                         <img src="./images/haircuts/haircut-2-1.jpeg"
                             alt="Corte moderno con volumen superior y laterales degradados">
