@@ -327,7 +327,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentY = window.scrollY;
 
     if (navbar) {
-      navbar.classList.toggle("is-scrolled", currentY > 24);
+      navbar.classList.toggle("scrolled", currentY > 24);
     }
 
     if (scrollToTopBtn) {
