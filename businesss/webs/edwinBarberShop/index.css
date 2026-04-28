@@ -32,8 +32,8 @@
     --gradient-section: linear-gradient(180deg, var(--color-surface-1) 0%, var(--color-bg) 100%);
     --gradient-section-soft: linear-gradient(180deg, var(--color-surface-1) 0%, var(--color-surface-2) 100%);
     --gradient-card: linear-gradient(180deg, var(--color-surface-glass-2) 0%, var(--color-surface-glass-1) 100%);
-    --font-display: "Cormorant Garamond", serif;
-    --font-body: "Manrope", sans-serif;
+    --font-display: "Sora", sans-serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
     --container: 1180px;
     --radius-lg: 32px;
     --radius-md: 22px;
