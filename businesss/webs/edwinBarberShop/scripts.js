@@ -67,6 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  document.addEventListener("click", (event) => {
+    if (!navList || !mobileMenu) return;
+    if (!navList.classList.contains("active")) return;
+
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    if (navList.contains(target) || mobileMenu.contains(target)) return;
+
+    closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    closeMenu();
+  });
+
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       const targetId = link.getAttribute("href");
